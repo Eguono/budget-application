@@ -1,0 +1,99 @@
+<% include partial/head %>
+  <% include partial/navbar %>
+    <body>
+        <div class="wrapper">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+
+            <% if(error) { %>
+            <div class = "alert alert-danger alert-dismissable">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              <%= error %>
+            </div>
+            <% } %>
+
+              <form class="form" method ='post' action ='/save_budget'>
+                <div class="form-group">
+                  <h3>Budget Month</h3>
+                  <select class="form-control" id="select" name="month">
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                  </select>
+                </div>
+
+                <h3>Income</h3>
+                <label for="paychecks" class="sr-only">Income (Paychecks)</label>
+                <input type="number" id="paychecks" name="paychecks" class="form-control" placeholder="Income (Paychecks)" required autofocus>
+                <label for="other-sources" class="sr-only">Income (Other sources)</label>
+                <input type="number" id="other-sources" name="other_sources" class="form-control" placeholder="Income (Other sources)" required>
+
+                <h3>Fixed Costs</h3>
+                <label for="rent" class="sr-only">Rent</label>
+                <input type="number" id="rent" name="rent" class="form-control" placeholder="Rent" required autofocus>
+                <label for="utilities" class="sr-only">Utilities</label>
+                <input type="number" id="utilities" name="utilities" class="form-control" placeholder="Utilities" required autofocus>
+                <label for="insuarance" class="sr-only">Insuarance</label>
+                <input type="number" id="insuarance" name="insuarance" class="form-control" placeholder="Insuarance" required autofocus>
+
+                <h3>Flex Expenses</h3>
+                <div class="form-group">
+                  <div class="col-lg-6">
+                    <input type="number" name="groceries" class="form-control" placeholder="Groceries">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="health" placeholder="Health">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-6">
+                    <input type="number" class="form-control" name="entertainment" placeholder="Entertainment">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="restaurant_bar" placeholder="Restaurant & Bar">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-6">
+                    <input type="number" class="form-control" name="personal_care" placeholder="Presonal Care">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="service_charges" placeholder="Service Charges">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-6">
+                    <input type="number" class="form-control" name="shopping" placeholder="Shopping">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="gifts" placeholder="Gifts">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-6">
+                    <input type="number" class="form-control" name="travel" placeholder="Travel">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="number" class="form-control" name="other" placeholder="Other">
+                  </div>
+                </div>
+
+                <br>
+                <div class="col-md-6 col-md-offset-6">
+                <button class="btn btn-primary btn-block" name="settings">Save Expense</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <% include partial/footer %>
+    </body>
